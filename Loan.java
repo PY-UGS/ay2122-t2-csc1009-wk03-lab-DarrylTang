@@ -23,7 +23,7 @@ public class Loan {
 
     // other methods
     public double getMonthlyPayment() {
-        double monthlyInterestRate = this.annualInterestRate / 12;
+        double monthlyInterestRate = (this.annualInterestRate/100) / 12;
         double compoundedInterest = Math.pow(1 + monthlyInterestRate, this.numberOfYears * 12);
         this.monthlyPayment = (this.loanAmount * monthlyInterestRate )/ (1 - (1 / compoundedInterest));
         return monthlyPayment;
